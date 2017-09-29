@@ -1,0 +1,23 @@
+﻿/*
+    Welcome to the screen sizes styles... I use these to make it a bit easier to figure out what we're working with
+*/
+
+//PHONE SCREENS
+$mobile-width: 600px;//0px to 767px (Just shy of 1024x768) is considered a mobile
+$target-mobile: screen and (max-width: $mobile-width);//Targets any device with a screen width < 768 px
+
+//TABLET (or Older smaller) SCREENS
+$tablet-width: 1200px;
+$tablet-min-width: $mobile-width+1;
+$target-tablet-and-mobile: screen and (max-width: $tablet-width);
+$target-tablet: screen and (max-width: $tablet-width) and (min-width: $tablet-min-width);
+
+//DESKTOP (or..?) SCREENS
+$desktop-width: 1800px;
+$desktop-min-width: $tablet-width+1;
+$target-desktop-tablet-and-mobile: screen and (max-width: $desktop-width);
+$target-desktop: screen and (max-width: $desktop-width) and (min-width: $desktop-min-width);
+
+//LARGE SCREENS
+$large-min-width: $desktop-width+1;
+$target-large: screen and (min-width: $large-min-width);

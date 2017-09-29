@@ -1,0 +1,4 @@
+﻿@mixin triangle($size, $color) {
+    border-top: $size solid $color;
+    border-right: $size solid transparent;
+}

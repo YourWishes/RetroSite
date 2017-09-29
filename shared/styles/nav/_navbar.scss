@@ -1,0 +1,43 @@
+﻿@import "../screens.scss";
+@import "../color/default.scss";
+
+$navbarZ: 1000;
+
+.navbar-area {
+    background-color: $gridColor;
+    background-image: url("../../public/images/grid_bg_white.png");
+
+    > .navbar {
+        background: rgba(0, 0, 0, 0.30);
+        width: 100%;
+        position: fixed;
+        z-index: $navbarZ;
+
+        //There are (essentially) two different navbars... one for Mobile and the other for desktop
+        //Mobile navbars don't have any links, instead just a menu
+        //The menu can also be opened on Desktop but in a different design
+
+        > .navbar-full {
+            //NOTE these numbers are identical to those found in _page.scss
+            //Eventually these will need to be their own variable so they stay in the same scale
+            //TODO: Implement a way that _page.scss and this have the same sizings.
+            margin: 0 auto;
+            width: 100vw;
+            position: relative;
+            display: flex;
+            @media #{$target-desktop} {width: 90vw;}
+            @media #{$target-large} {width: 80vw;}
+
+            @media #{$target-mobile} {display: none;}
+
+            > .nav-link {
+                padding: 3vw 1vw;
+            }
+
+            > .logo-area {
+                display: inline-block;
+                padding: 3vw 1vw;
+            }
+        }
+    }
+}

@@ -1,0 +1,7 @@
+{
+    "presets": [
+        "es2017",
+        "babel-preset-env",
+        "babel-preset-react"
+    ]
+}

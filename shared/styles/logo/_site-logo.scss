@@ -1,0 +1,115 @@
+﻿@import "../color/default.scss";
+@import "../shapes.scss";
+@import "../screens.scss";
+
+$logoFont: Verdana, Arial, Helvetica, sans-serif;
+$logoSubFont: 'MS PGothic', $logoFont;
+
+.logo-area {
+    text-align: center;
+    z-index: 10;
+
+    > .logo {
+        color: $logoColor;
+        text-shadow: 0px 0px $logoShadowBlue, 2px 2px $logoShadowPink;
+        transition: all 0.2s ease;
+        display: inline-block;
+        text-decoration: none;
+
+        &:hover {
+            color: $logoHoverColor;
+            text-shadow: -2px -2px $logoShadowBlue, 4px 4px $logoShadowPink;
+
+            > div {
+                > .logo-fix {
+                    > .logo-square-0 {
+                        transform: rotate(60deg) translate(35%, -45%);
+                    }
+
+                    > .logo-square-1 {
+                        transform: rotate(20deg) translate(45%, -20%);
+                    }
+                }
+            }
+        }
+
+        > div {
+            > span {
+                z-index: 1;
+                position: relative;
+                font-family: $logoFont;
+
+                > sub {
+                    text-align: center;
+                    display: block;
+                    font-size: 0.5em;
+                    font-family: $logoSubFont;
+
+                    &::before {
+                        content: " -  ";
+                    }
+
+                    &::after {
+                        content: " - ";
+                    }
+                }
+            }
+
+            > .logo-fix {
+                position: relative;
+
+                > div {
+                    width: 0;
+                    height: 0;
+                    position: absolute;
+                    transition: all 0.2s ease;
+                    @include triangle(15vw, $logoTrianglePink);
+                }
+
+                > .logo-square-0 {
+                    border-top-color: $logoTriangleBlue;
+                    transform: rotate(60deg) translate(30%, -45%);
+                }
+
+                > .logo-square-1 {
+                    border-top-color: $logoTrianglePink;
+                    transform: rotate(20deg) translate(55%, -24%);
+                }
+            }
+        }
+    }
+
+    //Logo Sizes
+    &.logo-lg {
+        padding: 15vh 0;
+
+        > .logo {
+            font-size: 5vw;
+            padding: 2.5vw 0;
+
+            > div > .logo-fix > div {
+                border-width: 15vw;
+            }
+        }
+    }
+
+    &.logo-auto {
+
+    }
+
+    //Scren Fixes
+    @media #{$target-tablet-and-mobile} {
+        &.logo-lg {
+            padding: 5vh 0;
+
+            > .logo {
+                font-size: 12vw;
+                padding: 5vw 0vw;
+
+                > div >.logo-fix > div {
+                    border-width: 36vw;
+                }
+            }
+        }
+    }
+}

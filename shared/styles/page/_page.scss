@@ -1,0 +1,25 @@
+﻿@import "../screens";
+
+.page {
+    background: white;
+    width: 100vw;
+
+    > .page-inner {
+        display: flex;
+
+        //On mobile and desktop screens we're going to use 100% of the screen width
+        margin: 0 auto;
+        width: 100vw;
+
+        //On Desktop Screens
+        @media #{$target-desktop} {
+            width: 90vw;
+        }
+        //Larj screens
+        @media #{$target-large} {
+            width: 80vw;
+        }
+    }
+}
+
+@import "_page-home.scss";

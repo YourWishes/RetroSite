@@ -1,0 +1,24 @@
+﻿@import "../screens.scss";
+@import url('https://fonts.googleapis.com/css?family=Archivo');
+@import "./fonts.scss";
+
+//Default Typography Settings Here.
+body {
+    font-family: $paragraphFont;
+    font-size: 7vw;
+
+    @media #{$target-mobile} {
+    }
+
+    @media #{$target-tablet} {
+        font-size: 3vw;
+    }
+
+    @media #{$target-desktop} {
+        font-size: 1.5vw;
+    }
+
+    @media #{$target-large} {
+        font-size: 0.75vw;
+    }
+}

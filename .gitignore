@@ -57,3 +57,14 @@ typings/
 # dotenv environment variables file
 .env
 
+### Project Specific ignores
+# Compiled Binaries folder
+dist/
+*.sln
+.vs/
+*.njsproj
+node.d.ts
+private/
+serve/
+public/images/
+package-lock.json
